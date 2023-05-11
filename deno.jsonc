@@ -1,0 +1,8 @@
+{
+  "fmt": {
+    "exclude": [
+      "MTKruto/*",
+      "dist/*"
+    ]
+  }
+}
