@@ -10,7 +10,7 @@ if (!version) {
 const entryPoint = Deno.args[1];
 
 if (!version) {
-  console.error("entryPoint not provided.");
+  console.error("Entry point not provided.");
   Deno.exit(1);
 }
 
