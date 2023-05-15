@@ -16,6 +16,12 @@ if (!version) {
 
 await emptyDir("./dist");
 
+try {
+  await Deno.writeTextFile("deno_global.ts", "\n");
+} catch (_err) {
+  //
+}
+
 await build({
   entryPoints: [entryPoint],
   outDir: "./dist",
