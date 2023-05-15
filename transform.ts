@@ -13,6 +13,7 @@ await build({
   entryPoints: ["./MTKruto/mod.ts"],
   outDir: "./dist",
   typeCheck: false,
+  test: false,
   shims: {
     custom: [{
       module: "./deno_global.ts",
