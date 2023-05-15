@@ -7,10 +7,17 @@ if (!version) {
   Deno.exit(1);
 }
 
+const entryPoint = Deno.args[1];
+
+if (!version) {
+  console.error("entryPoint not provided.");
+  Deno.exit(1);
+}
+
 await emptyDir("./dist");
 
 await build({
-  entryPoints: ["./MTKruto/mod.ts"],
+  entryPoints: [entryPoint],
   outDir: "./dist",
   typeCheck: false,
   test: false,
