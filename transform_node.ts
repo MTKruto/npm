@@ -1,14 +1,12 @@
 import { build, emptyDir } from "https://deno.land/x/dnt@0.35.0/mod.ts";
 
 const version = Deno.args[0];
-
 if (!version) {
   console.error("Version not provided.");
   Deno.exit(1);
 }
 
 const entryPoint = Deno.args[1];
-
 if (!entryPoint) {
   console.error("Entry point not provided.");
   Deno.exit(1);
@@ -16,32 +14,25 @@ if (!entryPoint) {
 
 await emptyDir("./dist");
 
-try {
-  await Deno.writeTextFile("deno_global.ts", "\n");
-} catch (_err) {
-  //
-}
-
 await build({
   entryPoints: [entryPoint],
   outDir: "./dist",
-  typeCheck: false,
-  test: false,
+  typeCheck: true,
+  test: true,
   shims: {
-    custom: [{
-      module: "./deno_global.ts",
-      globalNames: ["Deno"],
-    }],
+    deno: true,
+    crypto: true,
+    webSocket: true,
   },
   compilerOptions: {
-    lib: ["esnext", "dom", "dom.iterable"],
+    lib: ["esnext", "dom"],
   },
   packageManager: "pnpm",
   package: {
-    name: "mtkruto",
+    name: "@mtkruto/node",
     version,
-    description: "An attempt to write a Deno-native MTProto client",
-    author: "Roj <rojserbest@icloud.com>",
+    description: "MTKruto for Node.js",
+    author: "Roj <rojvv@icloud.com>",
     license: "LGPL-3.0-or-later",
     repository: {
       type: "git",
