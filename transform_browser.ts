@@ -1,4 +1,4 @@
-import { build, emptyDir } from "https://deno.land/x/dnt@0.35.0/mod.ts";
+import { build, emptyDir } from "https://deno.land/x/dnt@0.36.0/mod.ts";
 
 const version = Deno.args[0];
 if (!version) {
@@ -17,11 +17,11 @@ await emptyDir("./dist");
 await build({
   entryPoints: [entryPoint],
   outDir: "./dist",
-  typeCheck: true,
+  typeCheck: "both",
   test: false,
   shims: {},
   compilerOptions: {
-    lib: ["esnext", "dom"],
+    lib: ["ESNext", "DOM"],
   },
   packageManager: "pnpm",
   package: {
