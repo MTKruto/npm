@@ -1,4 +1,4 @@
-import { build, emptyDir } from "https://deno.land/x/dnt@0.36.0/mod.ts";
+import { build, emptyDir } from "https://deno.land/x/dnt@0.37.0/mod.ts";
 
 const version = Deno.args[0];
 if (!version) {
@@ -38,5 +38,13 @@ await build({
   postBuild() {
     Deno.copyFileSync("LICENSE", "dist/LICENSE");
     Deno.copyFileSync("README.md", "dist/README.md");
+  },
+  filterDiagnostic(diagnostic) {
+    if (
+      diagnostic.file?.fileName.endsWith("fmt/colors.ts")
+    ) {
+      return false;
+    }
+    return true;
   },
 });
