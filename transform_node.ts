@@ -38,6 +38,9 @@ await build({
       type: "git",
       url: "git+https://github.com/MTKruto/MTKruto.git",
     },
+    devDependencies: {
+      "@types/object-inspect": "^1.8.1",
+    },
   },
   postBuild() {
     Deno.copyFileSync("LICENSE", "dist/LICENSE");
