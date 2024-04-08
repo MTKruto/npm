@@ -39,7 +39,8 @@ await build({
     },
   },
   postBuild() {
-    Deno.copyFileSync("LICENSE", "dist/LICENSE");
+    Deno.copyFileSync("COPYING", "dist/COPYING");
+    Deno.copyFileSync("COPYING.LESSER", "dist/COPYING.LESSER");
     Deno.copyFileSync("README.md", "dist/README.md");
   },
   filterDiagnostic(diagnostic) {
