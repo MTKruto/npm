@@ -25,7 +25,7 @@ await build({
     webSocket: true,
   },
   compilerOptions: {
-    lib: ["ESNext", "DOM"],
+    lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
   packageManager: "pnpm",
   package: {

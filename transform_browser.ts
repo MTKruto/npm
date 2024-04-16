@@ -21,7 +21,7 @@ await build({
   test: false,
   shims: {},
   compilerOptions: {
-    lib: ["ESNext", "DOM"],
+    lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
   packageManager: "pnpm",
   package: {
