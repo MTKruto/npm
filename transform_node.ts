@@ -6,16 +6,16 @@ if (!version) {
   Deno.exit(1);
 }
 
-const entryPoint = Deno.args[1];
-if (!entryPoint) {
-  console.error("Entry point not provided.");
-  Deno.exit(1);
-}
-
 await emptyDir("./dist");
 
 await build({
-  entryPoints: [entryPoint],
+  entryPoints: [
+    "mod.ts",
+    {
+      name: "./1_utilities",
+      path: "1_utilities.ts",
+    },
+  ],
   outDir: "./dist",
   typeCheck: "both",
   test: true,
