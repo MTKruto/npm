@@ -1,4 +1,4 @@
-import { build, emptyDir } from "https://deno.land/x/dnt@0.40.0/mod.ts";
+import { build, emptyDir } from "jsr:@deno/dnt@0.41.1";
 
 const version = Deno.args[0];
 if (!version) {
