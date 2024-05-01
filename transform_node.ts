@@ -27,6 +27,10 @@ await build({
   compilerOptions: {
     lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
+  mappings: {
+    "./storage/2_storage_local_storage.ts":
+      "./storage/2_storage_local_storage.node.ts",
+  },
   packageManager: "pnpm",
   package: {
     name: "@mtkruto/node",
@@ -38,8 +42,11 @@ await build({
       type: "git",
       url: "git+https://github.com/MTKruto/MTKruto.git",
     },
+    dependencies: {
+      "node-localstorage": "^3.0.5",
+    },
     devDependencies: {
-      "@types/object-inspect": "^1.8.1",
+      "@types/node-localstorage": "^1.3.3",
     },
   },
   postBuild() {
