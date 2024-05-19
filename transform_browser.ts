@@ -19,7 +19,15 @@ await build({
   outDir: "./dist",
   typeCheck: false,
   test: false,
-  shims: {},
+  shims: {
+    custom: [{
+      package: {
+        name: "@deno/shim-deno",
+        version: "~0.18.0",
+      },
+      globalNames: [{ name: "Deno", typeOnly: true }],
+    }],
+  },
   compilerOptions: {
     lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
