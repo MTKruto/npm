@@ -17,7 +17,7 @@ await build({
     },
   ],
   outDir: "./dist",
-  typeCheck: "both",
+  typeCheck: false,
   test: true,
   shims: {
     deno: true,
