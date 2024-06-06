@@ -20,7 +20,13 @@ await build({
   typeCheck: false,
   test: true,
   shims: {
-    deno: true,
+    custom: [{
+      package: {
+        name: "@deno/shim-deno",
+        version: "~0.19.2",
+      },
+      globalNames: ["Deno"],
+    }],
     crypto: true,
     webSocket: true,
   },

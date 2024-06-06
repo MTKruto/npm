@@ -23,7 +23,7 @@ await build({
     custom: [{
       package: {
         name: "@deno/shim-deno",
-        version: "~0.18.0",
+        version: "~0.19.2",
       },
       globalNames: [{ name: "Deno", typeOnly: true }],
     }],
