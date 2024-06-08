@@ -36,6 +36,7 @@ await build({
   mappings: {
     "./storage/2_storage_local_storage.ts":
       "./storage/2_storage_local_storage.node.ts",
+    "./connection/1_connection_tcp.ts": "./connection/1_connection_tcp.node.ts",
   },
   packageManager: "pnpm",
   package: {
