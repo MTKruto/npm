@@ -29,6 +29,7 @@ await build({
     }],
     crypto: true,
     webSocket: true,
+    prompts: true,
   },
   compilerOptions: {
     lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
