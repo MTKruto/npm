@@ -1,4 +1,4 @@
-import { build, emptyDir } from "jsr:@deno/dnt@0.41.3";
+import { build, emptyDir } from "jsr:@deno/dnt@0.42.3";
 import COMPRESSIONSTREAM_PATCH from "./compressionstream_patch.ts";
 
 const version = Deno.args[0];
