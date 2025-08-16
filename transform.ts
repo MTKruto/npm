@@ -38,6 +38,7 @@ try {
       prompts: true,
     },
     compilerOptions: {
+      target: "ES2023",
       lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
     },
     mappings: {
