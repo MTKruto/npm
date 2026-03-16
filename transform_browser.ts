@@ -1,4 +1,4 @@
-import { build, emptyDir } from "jsr:@deno/dnt@0.42.3";
+import { build, emptyDir } from "jsr:@mtkruto/dnt@0.42.4";
 
 const version = Deno.args[0];
 if (!version) {
@@ -19,8 +19,12 @@ await build({
   outDir: "./dist",
   typeCheck: false,
   test: false,
-  shims: {},
+  shims: {
+    deno: false,
+
+  },
   compilerOptions: {
+    target: 'ES2023',
     lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
   packageManager: "pnpm",
